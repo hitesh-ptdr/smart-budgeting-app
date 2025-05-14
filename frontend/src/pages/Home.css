@@ -1,0 +1,53 @@
+.home-container {
+  /* background-color: #f5f7fa;
+  padding-top: 30px;
+  font-family: 'Segoe UI', sans-serif;  */
+    min-height: 100vh; /* Full viewport height */
+  background-color: #f5f7fa;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-family: 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+.hero-section {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: white;
+  padding: 80px 20px;
+  border-radius: 20px;
+  margin-bottom: 60px;
+}
+
+.hero-section h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.feature-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+}
+
+.feature-card svg {
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.footer-section {
+  background-color: #343a40;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 60px;
+}

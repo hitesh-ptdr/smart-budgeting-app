@@ -1,0 +1,66 @@
+.dashboard-container {
+  background-color: #f4f7fc;
+  padding: 30px;
+  min-height: 100vh;
+}
+
+.card {
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.budget-form-card {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 25px;
+}
+
+.budget-form-card input,
+.budget-form-card button {
+  margin-top: 10px;
+}
+
+.summary-card {
+  background-color: #dff9fb;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+}
+
+.summary-card .summary-value {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.transaction-list-card {
+  background-color: #ecf0f1;
+  padding: 25px;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+.transaction-list-card .transaction-item {
+  margin-bottom: 10px;
+}
+
+.transaction-list-card .transaction-item:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 15px;
+  }
+  .card-title {
+    font-size: 1.25rem;
+  }
+}
