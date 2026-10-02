@@ -1,66 +1,260 @@
-.dashboard-container {
-  background-color: #f4f7fc;
-  padding: 30px;
-  min-height: 100vh;
+:root{
+  --bg: #f6f9fc;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --accent-2: #10b981;
+  --danger: #ef4444;
+  --soft-border: rgba(2,6,23,0.06);
 }
 
-.card {
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+/* =========================
+   GLOBAL FIX (IMPORTANT)
+========================= */
+html, body{
+  height:100%;
+  margin:0;
+  overflow-x:hidden;
 }
 
-.card-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 20px;
+/* =========================
+   DASHBOARD LAYOUT FIX
+========================= */
+
+/* navbar height = 64px */
+.dashboard-fullscreen{
+  min-height: calc(100vh - 64px);
+  display:flex;
+  flex-direction:column;
+  margin-top:64px;
 }
 
-.budget-form-card {
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  padding: 25px;
+.dashboard-root{
+  flex:1;
+  overflow-y:auto;
+  overflow-x:hidden;
+  background: linear-gradient(180deg, var(--bg) 0%, #ffffff 100%);
+  color: #071331;
+  padding:20px;
 }
 
-.budget-form-card input,
-.budget-form-card button {
-  margin-top: 10px;
+/* =========================
+   HEADER
+========================= */
+.dashboard-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding-bottom:8px;
+}
+.dashboard-header h2{
+  margin:0;
+  font-size:1.4rem;
+  font-weight:700;
+}
+.header-actions{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.header-controls{
+  display:flex;
+  gap:8px;
+  align-items:center;
 }
 
-.summary-card {
-  background-color: #dff9fb;
-  border-radius: 12px;
-  padding: 25px;
-  text-align: center;
+/* =========================
+   PANELS / CARDS
+========================= */
+.panel{
+  background:var(--card);
+  border:1px solid var(--soft-border);
+  border-radius:12px;
+  box-shadow:0 8px 24px rgba(11,18,32,0.04);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.panel:hover{
+  transform: translateY(-6px);
+  box-shadow:0 18px 40px rgba(11,18,32,0.06);
 }
 
-.summary-card .summary-value {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #2c3e50;
+.card-title{
+  margin:0 0 8px;
+  font-weight:600;
+  color:#071331;
 }
 
-.transaction-list-card {
-  background-color: #ecf0f1;
-  padding: 25px;
-  border-radius: 12px;
-  margin-top: 20px;
+/* =========================
+   LEFT COLUMN STICKY
+========================= */
+.left-col .sticky-card{
+  position:sticky;
+  top:80px; /* navbar + spacing */
 }
 
-.transaction-list-card .transaction-item {
-  margin-bottom: 10px;
+/* =========================
+   SUMMARY GRID
+========================= */
+.summary-grid{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.summary-card-item{
+  flex:1 1 0;
+  padding:12px;
+  border-radius:10px;
+  background:linear-gradient(180deg, rgba(37,99,235,0.05), rgba(16,185,129,0.03));
+  border:1px solid rgba(11,18,32,0.03);
+  min-width:120px;
+}
+.summary-card-item small{
+  color:var(--muted);
+}
+.summary-card-item .h5{
+  margin:0;
+  color:#071331;
 }
 
-.transaction-list-card .transaction-item:last-child {
-  margin-bottom: 0;
+/* =========================
+   CHARTS
+========================= */
+.chart-area{
+  width:100%;
+  height:220px;
+}
+.chart-area.small{
+  height:160px;
 }
 
-@media (max-width: 768px) {
-  .dashboard-container {
-    padding: 15px;
-  }
-  .card-title {
-    font-size: 1.25rem;
-  }
+/* =========================
+   TRANSACTIONS
+========================= */
+.transaction-item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:12px;
+  border-radius:10px;
+  margin-bottom:10px;
+  border:1px solid rgba(11,18,32,0.04);
+  background:linear-gradient(180deg,#fff,#fbfeff);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.transaction-item:hover{
+  transform:translateY(-4px);
+  box-shadow:0 10px 30px rgba(11,18,32,0.05);
+}
+.tx-left{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  min-width:0;
+}
+.tx-avatar{
+  width:44px;
+  height:44px;
+  border-radius:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-weight:700;
+  background:linear-gradient(135deg,#60a5fa,#3b82f6);
+}
+.tx-meta{
+  min-width:0;
+}
+.tx-title{
+  font-weight:600;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.tx-meta small{
+  color:var(--muted);
+  font-size:.82rem;
+}
+
+.tx-amount{
+  font-weight:800;
+}
+.tx-income{ color:var(--accent-2); }
+.tx-expense{ color:var(--danger); }
+
+.transaction-item.review{
+  border-left:4px solid #f59e0b;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn-primary{
+  background:linear-gradient(90deg,var(--accent),#60a5fa);
+  border:none;
+}
+.btn-outline-danger{
+  color:var(--danger);
+  border-color:rgba(239,68,68,0.15);
+}
+
+/* =========================
+   CATEGORY
+========================= */
+.category-manage .badge{
+  background:#f1f5f9;
+  color:#071331;
+}
+
+/* =========================
+   TOP CATEGORIES
+========================= */
+.top-cats{
+  list-style:none;
+  padding:0;
+  margin-top:8px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.cat-item{
+  display:flex;
+  justify-content:space-between;
+  padding:8px;
+  border-radius:8px;
+  background:#fbfdff;
+  border:1px solid rgba(11,18,32,0.04);
+}
+.cat-flag{
+  border-color:rgba(239,68,68,0.15);
+  box-shadow:0 6px 20px rgba(239,68,68,0.06);
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+.empty-state{
+  padding:20px;
+  text-align:center;
+  color:var(--muted);
+}
+
+/* =========================
+   RESPONSIVE FIX
+========================= */
+@media(max-width:991px){
+  .dashboard-root{ padding:12px; }
+  .summary-grid{ flex-direction:column; }
+  .left-col .sticky-card{ position:static; }
+  .chart-area{ height:180px; }
+  .header-controls{ flex-wrap:wrap; }
+}
+
+/* =========================
+   UTILITIES
+========================= */
+.muted, .text-muted{
+  color:var(--muted);
 }

@@ -1,121 +1,144 @@
-import React, { useState } from "react";
-import Tilt from "react-parallax-tilt";
-import { Button, Container, Row, Col, ButtonGroup } from "react-bootstrap";
-import { FaDollarSign, FaChartLine, FaCogs } from "react-icons/fa";
-import { Pie } from "react-chartjs-2";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import "./Home.css";
-
-ChartJS.register(ArcElement, Tooltip, Legend);
-
-function Home() {
-  const [period, setPeriod] = useState("1M");
-
-  const spendingData = {
-    "1M": {
-      labels: ["Rent", "Groceries", "Utilities", "Entertainment", "Others"],
-      data: [500, 200, 100, 150, 50],
-    },
-    "3M": {
-      labels: ["Rent", "Groceries", "Utilities", "Entertainment", "Others"],
-      data: [1500, 600, 300, 400, 200],
-    },
-    "6M": {
-      labels: ["Rent", "Groceries", "Utilities", "Entertainment", "Others"],
-      data: [3000, 1200, 600, 800, 400],
-    },
-  };
-
-  const data = {
-    labels: spendingData[period].labels,
-    datasets: [
-      {
-        label: `Spending Categories (${period})`,
-        data: spendingData[period].data,
-        backgroundColor: ["#007bff", "#28a745", "#ffc107", "#dc3545", "#6c757d"],
-        borderWidth: 1,
-      },
-    ],
-  };
-
+export default function Home() {
   return (
-    <div className="home-container">
-      <Container>
-        <Row className="hero-section text-center">
-          <Col>
-            <h1>Welcome to PennyPocket</h1>
-            <p>Your trusted tool to manage your money better and smarter!</p>
-            <Button variant="light" size="lg" href="/dashboard">
-              Get Started
-            </Button>
-          </Col>
-        </Row>
+    <main className="bk-home">
 
-        <Row className="features-section text-center">
-          <Col md={4}>
-            <Tilt glareEnable={true} glareMaxOpacity={0.2} scale={1.05}>
-              <div className="feature-card">
-                <FaDollarSign size={50} />
-                <h3>Track Income</h3>
-                <p>Monitor all your income streams effortlessly.</p>
-              </div>
-            </Tilt>
-          </Col>
+      <section className="bk-hero">
+        <div className="bk-hero-left">
+          <h1>
+            The easiest way to <br />
+            <span>track expenses & budgets</span>
+          </h1>
 
-          <Col md={4}>
-            <Tilt glareEnable={true} glareMaxOpacity={0.2} scale={1.05}>
-              <div className="feature-card">
-                <FaChartLine size={50} />
-                <h3>Analyze Spending</h3>
-                <p>Visualize your spending habits with charts.</p>
+          <p>
+            PennyPocket helps you record expenses, manage budgets and clearly
+            understand where your money goes.
+          </p>
 
-                <ButtonGroup className="mb-3">
-                  <Button
-                    variant={period === "1M" ? "primary" : "outline-primary"}
-                    onClick={() => setPeriod("1M")}
-                  >
-                    1 Month
-                  </Button>
-                  <Button
-                    variant={period === "3M" ? "primary" : "outline-primary"}
-                    onClick={() => setPeriod("3M")}
-                  >
-                    3 Months
-                  </Button>
-                  <Button
-                    variant={period === "6M" ? "primary" : "outline-primary"}
-                    onClick={() => setPeriod("6M")}
-                  >
-                    6 Months
-                  </Button>
-                </ButtonGroup>
+          <div className="bk-actions">
+            <button className="bk-primary">Get started free</button>
+            <button className="bk-secondary">View demo</button>
+          </div>
 
-                <div style={{ maxWidth: "280px", margin: "0 auto" }}>
-                  <Pie data={data} />
-                </div>
-              </div>
-            </Tilt>
-          </Col>
+          <div className="bk-rating">
+            ⭐⭐⭐⭐⭐ <span>4.8 rating • 10,000+ users</span>
+          </div>
+        </div>
 
-          <Col md={4}>
-            <Tilt glareEnable={true} glareMaxOpacity={0.2} scale={1.05}>
-              <div className="feature-card">
-                <FaCogs size={50} />
-                <h3>Set Goals</h3>
-                <p>Create budgets and stick to them with alerts!</p>
-              </div>
-            </Tilt>
-          </Col>
-        </Row>
+        <div className="bk-hero-right">
+          <img src="/src/assets/phone1.png" alt="app preview" />
+        </div>
+      </section>
 
-        <Row className="footer-section text-center">
-          <Col>
-            <p>&copy; 2025 PennyPocket. All rights reserved.</p>
-          </Col>
-        </Row>
-      </Container>
+
+<section className="bk-trust">
+  <p className="bk-trust-title">
+    Trusted everywhere by freelancers and businesses
+  </p>
+  <div className="logo-slider">
+    <div className="logo-track">
+      <img src="/src/assets/logos/Frame-8.webp" alt="logo" /> 
+      <img src="/src/assets/logos/Frame-6.png" alt="logo" />
+      <img src="/src/assets/logos/Frame-7.png" alt="logo" />
+      <img src="/src/assets/logos/Frame-8.webp" alt="logo" />
+      <img src="/src/assets/logos/Frame-6.png" alt="logo" />
+      <img src="/src/assets/logos/Frame-10.webp" alt="logo" />
+         <img src="/src/assets/logos/Frame-7.png" alt="logo" />
+      <img src="/src/assets/logos/Frame-8.webp" alt="logo" />
+      <img src="/src/assets/logos/Frame-6.png" alt="logo" />
+      <img src="/src/assets/logos/Frame-10.webp" alt="logo" />
     </div>
+
+  </div>   
+</section>   
+
+      <section className="bk-benefits">
+        <h2>Know your money. Control your future.</h2>
+
+        <div className="bk-benefit-grid">
+          <div>
+            <h4>Track every expense</h4>
+            <p>Never lose track of where your money goes.</p>
+          </div>
+          <div>
+            <h4>Create smart budgets</h4>
+            <p>Plan monthly budgets and reduce overspending.</p>
+          </div>
+          <div>
+            <h4>Clear insights</h4>
+            <p>Visual charts that make sense instantly.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bk-row">
+        <img src="/src/assets/phone2.png" alt="feature" />
+        <div>
+          <h3>Track expenses in seconds</h3>
+          <p>
+            Quickly add income and expenses with categories and notes.
+          </p>
+        </div>
+      </section>
+
+      <section className="bk-row reverse">
+        <div>
+          <h3>Understand spending habits</h3>
+          <p>
+            See spending patterns and improve financial habits.
+          </p>
+        </div>
+        <img src="/src/assets/phone3.png" alt="feature" />
+      </section>
+
+      <section className="bk-use">
+        <h2>Made for everyone</h2>
+        <div className="bk-use-grid">
+          <div>Students</div>
+          <div>Freelancers</div>
+          <div>Families</div>
+          <div>Small businesses</div>
+        </div>
+      </section>
+
+      <section className="bk-steps">
+        <h2>How it works</h2>
+        <div className="bk-step-grid">
+          <div>Add transactions</div>
+          <div>Track & analyze</div>
+          <div>Save more money</div>
+        </div>
+      </section>
+
+      <section className="bk-cta-section">
+        <h2>Get started in minutes</h2>
+        <button className="bk-primary big">Start tracking now</button>
+      </section>
+
+      <section className="bk-faq">
+        <h2>Frequently asked questions</h2>
+
+        <details>
+          <summary>Is PennyPocket free?</summary>
+          <p>Yes, you can use the core features for free.</p>
+        </details>
+
+        <details>
+          <summary>Is my data safe?</summary>
+          <p>Your data stays securely in your browser.</p>
+        </details>
+
+        <details>
+          <summary>Can I use it for business?</summary>
+          <p>Yes, it works for personal and small business use.</p>
+        </details>
+      </section>
+
+      <section className="bk-final">
+        <h2>Start managing your money today</h2>
+        <button className="bk-primary big">Get started free</button>
+      </section>
+
+    </main>
   );
 }
-
-export default Home;
