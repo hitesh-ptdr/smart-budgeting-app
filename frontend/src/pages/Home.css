@@ -1,14 +1,18 @@
-
-
 .bk-home {
   margin-top: 72px;
   font-family: Inter, system-ui, sans-serif;
 }
-/* HERO */
+
+
+/* =========================
+   HERO
+========================= */
+
 .bk-hero {
   max-width: 1200px;
   margin: auto;
   padding: 100px 6%;
+
   display: flex;
   gap: 60px;
   align-items: center;
@@ -19,8 +23,20 @@
   line-height: 1.1;
 }
 
-.bk-hero span {
+.bk-hero h1 span {
   color: #16a34a;
+}
+
+.bk-hero-left {
+  flex: 1;
+}
+
+.bk-hero-left > p {
+  max-width: 580px;
+
+  color: #64748b;
+
+  line-height: 1.7;
 }
 
 .bk-actions {
@@ -31,101 +47,200 @@
 
 .bk-primary {
   padding: 14px 32px;
+
   border-radius: 999px;
+
   background: #16a34a;
+
   color: #fff;
+
   border: none;
+
   font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.bk-primary:hover {
+  background: #15803d;
 }
 
 .bk-secondary {
   padding: 14px 32px;
+
   border-radius: 999px;
+
   border: 1px solid #e5e7eb;
+
   background: #fff;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.bk-secondary:hover {
+  border-color: #16a34a;
+
+  color: #16a34a;
 }
 
 .bk-rating {
   margin-top: 18px;
+
   color: #64748b;
+}
+
+.bk-hero-right {
+  flex: 1;
+
+  display: flex;
+
+  justify-content: center;
 }
 
 .bk-hero-right img {
   width: 340px;
-  /* box-shadow: 0 40px 80px rgba(0,0,0,0.15); */
+
   border-radius: 24px;
 }
 
+
+/* =========================
+   TRUST
+========================= */
+
 .bk-trust {
   padding: 70px 6%;
+
   text-align: center;
-  background: #ffffff;   /* screenshot जैसा clean white */
+
+  background: #ffffff;
+
   overflow: hidden;
 }
 
 .bk-trust-title {
   font-size: 20px;
+
   font-weight: 500;
+
   color: #0f172a;
+
   margin-bottom: 40px;
 }
 
+
 /* slider wrapper */
+
 .logo-slider {
   width: 100%;
+
   overflow: hidden;
+
   position: relative;
 }
 
+
 /* moving track */
+
 .logo-track {
   display: flex;
+
   align-items: center;
-  gap: 80px;                 /* spacing like screenshot */
+
+  gap: 80px;
+
   width: max-content;
-  animation: slide 10s linear infinite;  /* smooth fast */
+
+  animation: slide 10s linear infinite;
 }
+
 
 /* LOGOS */
+
 .logo-track img {
-  height: 48px;              /* 🔥 BIGGER LOGOS */
-  opacity: 0.45;             /* light grey look */
+  height: 48px;
+
+  opacity: 0.45;
+
   filter: grayscale(100%);
-  box-shadow: none !important; /* ❌ NO SHADOW */
+
+  box-shadow: none !important;
+
+  object-fit: contain;
 }
 
+
 /* infinite smooth loop */
+
 @keyframes slide {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
 }
 
 
-/* BENEFITS */
+/* =========================
+   BENEFITS
+========================= */
+
 .bk-benefits {
   padding: 90px 6%;
+
   text-align: center;
 }
 
 .bk-benefit-grid {
   max-width: 1000px;
+
   margin: 50px auto 0;
+
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
+
   gap: 30px;
 }
 
-/* FEATURE ROW */
+.bk-benefit-grid > div {
+  padding: 25px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 14px;
+
+  background: #fff;
+}
+
+.bk-benefit-grid p {
+  color: #64748b;
+
+  line-height: 1.6;
+}
+
+
+/* =========================
+   FEATURE ROW
+========================= */
+
 .bk-row {
   max-width: 1100px;
+
   margin: auto;
+
   padding: 80px 6%;
+
   display: flex;
+
   gap: 60px;
+
   align-items: center;
 }
 
@@ -133,65 +248,261 @@
   flex-direction: row-reverse;
 }
 
-.bk-row img {
-  width: 260px;
+.bk-row > div {
+  flex: 1;
 }
 
-/* USE CASE */
+.bk-row img {
+  width: 260px;
+
+  border-radius: 22px;
+}
+
+.bk-row p {
+  color: #64748b;
+
+  line-height: 1.7;
+}
+
+
+/* =========================
+   USE CASE
+========================= */
+
 .bk-use {
   background: #f8fafc;
+
   padding: 80px 6%;
+
   text-align: center;
 }
 
 .bk-use-grid {
   margin-top: 40px;
+
   display: grid;
+
   grid-template-columns: repeat(4, 1fr);
+
   gap: 20px;
 }
 
 .bk-use-grid div {
   padding: 20px;
+
   background: #fff;
+
   border-radius: 14px;
 }
 
-/* STEPS */
+
+/* =========================
+   STEPS
+========================= */
+
 .bk-steps {
   padding: 80px 6%;
+
   text-align: center;
 }
 
 .bk-step-grid {
   display: flex;
+
   justify-content: center;
+
   gap: 40px;
+
   margin-top: 30px;
 }
 
-/* CTA */
+.bk-step-grid div {
+  padding: 20px 30px;
+
+  background: #f8fafc;
+
+  border-radius: 14px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
 .bk-cta-section,
 .bk-final {
   padding: 90px 6%;
+
   text-align: center;
+
   background: #16a34a;
+
   color: #fff;
 }
 
 .bk-primary.big {
   margin-top: 20px;
+
   padding: 16px 40px;
+
   font-size: 16px;
+
+  background: #ffffff;
+
+  color: #16a34a;
 }
 
-/* FAQ */
+.bk-primary.big:hover {
+  background: #f0fdf4;
+}
+
+
+/* =========================
+   FAQ
+========================= */
+
 .bk-faq {
   padding: 90px 6%;
+
   max-width: 900px;
+
   margin: auto;
 }
 
 .bk-faq details {
   margin-bottom: 16px;
+
+  padding: 18px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 12px;
+}
+
+.bk-faq summary {
+  cursor: pointer;
+
+  font-weight: 600;
+}
+
+.bk-faq p {
+  color: #64748b;
+
+  line-height: 1.6;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .bk-hero {
+    flex-direction: column;
+
+    text-align: center;
+  }
+
+  .bk-hero-left > p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .bk-actions {
+    justify-content: center;
+  }
+
+  .bk-benefit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bk-row,
+  .bk-row.reverse {
+    flex-direction: column;
+
+    text-align: center;
+  }
+
+  .bk-use-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bk-step-grid {
+    flex-direction: column;
+
+    max-width: 500px;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .bk-home {
+    margin-top: 60px;
+  }
+
+  .bk-hero {
+    padding: 60px 20px;
+  }
+
+  .bk-hero h1 {
+    font-size: 38px;
+  }
+
+  .bk-actions {
+    flex-direction: column;
+  }
+
+  .bk-primary,
+  .bk-secondary {
+    width: 100%;
+  }
+
+  .bk-hero-right img {
+    width: 280px;
+  }
+
+  .logo-track {
+    gap: 45px;
+  }
+
+  .logo-track img {
+    height: 38px;
+  }
+
+  .bk-benefits,
+  .bk-steps,
+  .bk-faq {
+    padding: 65px 20px;
+  }
+
+  .bk-row {
+    padding: 60px 20px;
+  }
+
+  .bk-row img {
+    width: 240px;
+  }
+
+  .bk-use {
+    padding: 65px 20px;
+  }
+
+  .bk-use-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bk-cta-section,
+  .bk-final {
+    padding: 70px 20px;
+  }
+
+  .bk-cta-section h2,
+  .bk-final h2 {
+    font-size: 30px;
+  }
 }
