@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import BudgetForm from '../components/BudgetForm';
-import TransactionList from '../components/TransactionList';
+import TransactionList from '../Components/TransactionList';
 import SummaryCard from '../components/SummaryCard';
 import { Container, Row, Col, Card, ProgressBar, Button, Alert, Form } from 'react-bootstrap';
 import { toast, ToastContainer } from 'react-toastify';
