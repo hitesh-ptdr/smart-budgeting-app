@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import BudgetForm from '../components/BudgetForm';
+import BudgetForm from '../Components/BudgetForm';
 import TransactionList from '../Components/TransactionList';
-import SummaryCard from '../components/SummaryCard';
+import SummaryCard from '../Components/SummaryCard';
 import { Container, Row, Col, Card, ProgressBar, Button, Alert, Form } from 'react-bootstrap';
 import { toast, ToastContainer } from 'react-toastify';
 import Swal from 'sweetalert2';
